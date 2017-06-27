@@ -50,7 +50,17 @@ void loop() {
 
 // =========================  TESTCODE // ====================================== 
 // {TESTCODE}
-    
+    Serial.print("Door is ");
+    if (digitalRead(MAGNETICDOORSWITCH_PIN_SIG) == HIGH) {
+        Serial.print("closed. Open the door!")
+        while (digitalRead(MAGNETICDOORSWITCH_PIN_SIG) == HIGH) ;
+        Serial.print("The door is now open!")
+    }
+    else if (digitalRead(MAGNETICDOORSWITCH_PIN_SIG) == LOW) {
+        Serial.print("open. Close the door!")
+        while (digitalRead(MAGNETICDOORSWITCH_PIN_SIG) == LOW) ;
+        Serial.print("The door is now closed!")
+    }
 // {/TESTCODE}
 // =========================  END OF TESTCODE // =============================== 
     
